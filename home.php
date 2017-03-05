@@ -26,13 +26,13 @@
 
       <?php
 
-    		if (isset($_GET['username']) && isset($_GET['password'])
-    			&& $_GET['username'] == 'testusername' && $_GET['password'] == 'testpassword'
+    		if (isset($_POST['username']) && isset($_POST['password'])
+    			&& $_POST['username'] == 'testusername' && $_POST['password'] == 'testpassword'
     			) {
     	?>
 
         <h3>
-          Selamat datang, <?php echo $_GET['username']; ?>!
+          Selamat datang, <?php echo $_POST['username']; ?>!
         </h3>
 
     	<?php

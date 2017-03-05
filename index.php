@@ -25,7 +25,7 @@
       <hr>
 
       <div class="login-form">
-        <form action="home.php" method="GET">
+        <form action="home.php" method="POST">
           <h2 class="login-form-heading">Log in</h2>
 
           <div class="form-group">
