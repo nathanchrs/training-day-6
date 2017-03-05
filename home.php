@@ -1,3 +1,7 @@
+<?php
+  require_once('db.php');
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -32,10 +36,25 @@
     	?>
 
         <h3>
-          Selamat datang, <?php echo $_POST['username']; ?>!
+          Selamat datang, <?php echo $_POST['username']; ?>
         </h3>
 
-    	<?php
+      <table class="table">
+        <tr>
+          <th>Username</th>
+          <th>Bio</th>
+        </tr>
+
+        <?php
+            $stmt = $db->query('SELECT * FROM users');
+     
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo '<tr><td>' . $row['username'] . '</td><td>' . $row['bio'] . '</td></tr>';
+            }
+        ?>
+      </table>
+
+      <?php
     		} else {
     	?>
 
