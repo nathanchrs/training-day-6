@@ -1,28 +1,56 @@
-<?php
-	echo("<h1>Hello world!</h1>");
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="author" content="nathanchrs">
 
-	echo("1+1 = ");
-	echo(1+1);
-	echo("<br>");
+    <title>ARC Training Day 6 - Home</title>
 
-	$a = 5;
-	$b = 10;
-	$c = $a + $b;
-	echo("a+b = ");
-	echo($c);
-	echo("<br>");
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-	echo("this " . " is " . " concatenation");
-	echo("<br>");
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
 
-	if (isset($_GET['test'])) {
-		echo("test = " . $_GET['test']);
-	} else {
-		echo("test is not set");
-	}
-	echo("<br>");
+  </head>
 
-	for ($i = 1; $i <= 10; $i++) {
-		echo($i . "<br>");
-	}
-?>
+  <body>
+
+    <div class="container">
+
+      <h1>ARC Training <small>Day 6</small></h1>
+      <hr>
+
+      <?php
+
+    		if (isset($_GET['username']) && isset($_GET['password'])
+    			&& $_GET['username'] == 'testusername' && $_GET['password'] == 'testpassword'
+    			) {
+    	?>
+
+        <h3>
+          Selamat datang, <?php echo $_GET['username']; ?>!
+        </h3>
+
+    	<?php
+    		} else {
+    	?>
+
+        <h3>
+          Username atau password salah.
+        </h3>
+
+      <?php
+        }
+      ?>
+      
+
+      <a href="index.php">Kembali</a>
+
+    </div>
+
+  </body>
+</html>
