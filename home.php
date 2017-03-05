@@ -1,5 +1,6 @@
 <?php
   require_once('db.php');
+  require_once('login.php');
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +30,10 @@
       <hr>
 
       <?php
+        $username = $_POST['username'] || '';
+        $password = $_POST['password'] || '';
 
-    		if (isset($_POST['username']) && isset($_POST['password'])
-    			&& $_POST['username'] == 'testusername' && $_POST['password'] == 'testpassword'
-    			) {
+    		if ( valid_login($username, $password) ) {
     	?>
 
         <h3>
